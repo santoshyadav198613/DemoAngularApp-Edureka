@@ -1,0 +1,14 @@
+<h1>Welcome to employee module - {{firstName}}</h1>
+{{firstName}}
+<input type="text" class="form-control" [value]="firstName" id="firstName" [(ngModel)]="firstName">
+<button type="button" class="btn btn-primary" (click)="submit(firstName)">Change Name</button> {{changedName}}
+<div *ngIf="isVisible">
+    <product [userName]="userName" [products]="products"></product>
+</div>
+<div *ngIf="!isVisible">
+    <app-order></app-order>
+</div>
+
+<product [userName]="userName" [products]="products"></product>
+<product [userName]="userName" [products]="products"></product>
+<button type="button" class="btn btn-primary" (click)="addProduct()">Add Product</button>
