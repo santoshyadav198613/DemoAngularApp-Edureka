@@ -1,6 +1,29 @@
 <p>
   order works!
 </p>
+
+<form #orderForm="ngForm" (submit)="addOrder()" novalidate>
+  <div>
+    <label>Order ID</label>
+    <input class="form-control" required type="text" name="orderid" [(ngModel)]="order.id" #orderid="ngModel">
+    <div *ngIf="!orderid.valid" class="alert alert-danger">Please provide order id</div>  
+  </div>
+  <div>
+    <label>Order Number</label>
+    <input class="form-control" required type="text" name="ordernumber" [(ngModel)]="order.orderNumber" #orderno="ngModel">
+     <div *ngIf="!orderno.valid" class="alert alert-danger">Please provide order Number</div> 
+  </div>
+  <div>
+    <label>User Name</label>
+    <input class="form-control" required type="text" name="username" [(ngModel)]="order.userName" #uname="ngModel">
+     <div *ngIf="!uname.valid" class="alert alert-danger">Please provide order UserName</div> 
+  </div>
+  <div>
+    <button [disabled]="!orderForm.valid" class="btn btn-primary" >Add Order</button>
+  </div>
+</form>
+
+
 <table class="table">
   <thead>
     <tr>

@@ -6,7 +6,7 @@ import { ProductService } from '../service/product/product.service';
 @Component({
     selector: 'emp',
     templateUrl: './employee.html',
-    providers: [ ProductService ]
+    providers: [ ]
 })
 export class Employee {
     firstName: string = "Test";

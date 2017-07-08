@@ -8,6 +8,7 @@ import { Product } from  './product/product.component';
 import { OrderComponent } from './order/order.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { OrderService } from  './service/order/order.service';
+import {ProductService} from  './service/product/product.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { OrderService } from  './service/order/order.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [OrderService],
+  providers: [OrderService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

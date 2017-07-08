@@ -10,12 +10,17 @@ export class OrderService {
   {
     id: 2,
     orderNumber: 12345,
-    userName: 'test test'
+    userName: 'test test' 
   }];
   constructor() { }
 
   getOrders() {
     return this.orders;
+  }
+
+  addOrder(order: any )
+  {
+    this.orders.push(order);
   }
 
 }
