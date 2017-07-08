@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import  { Employee } from './employee/employee.component';
 import { Product } from  './product/product.component';
 import { OrderComponent } from './order/order.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { OrderService } from  './service/order/order.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     Employee,
     Product,
-    OrderComponent
+    OrderComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

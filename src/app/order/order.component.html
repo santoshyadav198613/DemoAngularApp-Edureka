@@ -1,3 +1,30 @@
 <p>
   order works!
 </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Order ID
+      </th>
+      <th>
+        Order Number
+      </th>
+      <th>
+        User Name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td> {{order.id}}
+      </td>
+      <td>
+        {{order.orderNumber}}
+      </td>
+      <td>
+        {{order.userName}}
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,21 +1,31 @@
 import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Product } from '../product/product.component';
+import { ProductService } from '../service/product/product.service';
 
 
 @Component({
     selector: 'emp',
-    templateUrl: './employee.html'
+    templateUrl: './employee.html',
+    providers: [ ProductService ]
 })
 export class Employee {
     firstName: string = "Test";
     changedName: string;
     isVisible = false;
     userName = "Test User";
-    products = [{ name: 'HD TV 32 inch', price: 45000 }, { name: 'refrigerator 150 Ltr', price: 10000 }];;
+    products = [];
     @ViewChild(Product)
     productComponent: Product;
     @ViewChildren(Product)
     productChildren: QueryList<Product>;
+
+    constructor(private _service: ProductService) {
+
+    }
+
+    ngOnInit(){
+        this.products = this._service.getProducts();
+    }
 
     submit(name: string) {
         this.changedName = name;
