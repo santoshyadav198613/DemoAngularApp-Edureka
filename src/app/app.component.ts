@@ -8,6 +8,6 @@ import { Employee } from './employee/employee.component';
 })
 export class AppComponent  {
   title = 'app';
-
+  displayMode ="Live";
   
 }

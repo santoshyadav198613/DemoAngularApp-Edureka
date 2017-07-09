@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Order } from '../../order/order';
 
 @Injectable()
 export class OrderService {
-  orders = [{
+  orders : Order[] = [{
     id: 1,
     orderNumber: 1234,
-    userName: 'test'
+    userName: 'test',
+    password  : ''
   },
   {
     id: 2,
     orderNumber: 12345,
-    userName: 'test test' 
+    userName: 'test test' ,
+    password : ''
   }];
   constructor() { }
 

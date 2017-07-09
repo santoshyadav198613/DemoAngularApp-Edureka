@@ -16,8 +16,7 @@ Welcome {{userName}}
         <button class="btn btn-primary" [disabled]="!productForm.valid" (click)="addProduct()">Add Product</button>
     </div>
 </form>
-{{productForm.valid}}
-{{product| json}}
+{{productForm.valid}} {{product| json}}
 <!--{{productForm. | json}}-->
 
 <table class="table">
@@ -29,10 +28,13 @@ Welcome {{userName}}
     </thead>
     <tbody>
         <tr *ngFor="let product of products">
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
+            <td>{{product.name | lowercase }}</td>
+            <!--| slice: 0:3-->
+            <td>{{product.price | percent}}</td>
         </tr>
     </tbody>
 </table>
+
+{{posts |json }}
 
 <!--<button type="button" (click)="addProduct()">Add Product</button>-->

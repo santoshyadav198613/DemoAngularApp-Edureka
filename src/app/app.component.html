@@ -5,5 +5,14 @@
   </h1>
   This is my App Component
 </div>
- <emp></emp>
- 
+<emp></emp>
+<app-invoice></app-invoice>
+<app-user></app-user>
+
+
+<div [ngSwitch]="displayMode">
+  <div *ngSwitchCase="'Live'">Live Mode On </div>
+  <div *ngSwitchCase="'Dev'">Development Mode On </div>
+  <div *ngSwitchCase="'Staging'"> Staging Mode On</div>
+  <div *ngSwitchDefault>DisplayMode All </div>
+</div>

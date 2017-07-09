@@ -2,11 +2,11 @@
   order works!
 </p>
 
-<form #orderForm="ngForm" (submit)="addOrder()" novalidate>
+<form #orderForm="ngForm" (submit)="addOrder(orderForm)" novalidate>
   <div>
     <label>Order ID</label>
     <input class="form-control" required type="text" name="orderid" [(ngModel)]="order.id" #orderid="ngModel">
-    <div *ngIf="!orderid.valid" class="alert alert-danger">Please provide order id</div>  
+    <div *ngIf="!orderid.valid || orderid.pristine" class="alert alert-danger">Please provide order id</div>  
   </div>
   <div>
     <label>Order Number</label>
@@ -17,6 +17,11 @@
     <label>User Name</label>
     <input class="form-control" required type="text" name="username" [(ngModel)]="order.userName" #uname="ngModel">
      <div *ngIf="!uname.valid" class="alert alert-danger">Please provide order UserName</div> 
+  </div>
+   <div>
+    <label>Password</label>
+    <input class="form-control" required type="text" name="password" [(ngModel)]="order.password" #pwd="ngModel">
+     <div *ngIf="!pwd.valid" class="alert alert-danger">Please provide password</div> 
   </div>
   <div>
     <button [disabled]="!orderForm.valid" class="btn btn-primary" >Add Order</button>
@@ -51,3 +56,4 @@
     </tr>
   </tbody>
 </table>
+{{orders | json }}

@@ -1,0 +1,39 @@
+<p>
+  user works!   {{userForm.controls.address.controls.length}}
+</p>
+<form [formGroup]="userForm" novalidate>
+  <div class="form-group">
+    <label>Name</label>
+    <input class="form-control" type="text" formControlName="name" name="name">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control" type="email" formControlName="email" name="email">
+  </div>
+  <!--<div class="form-group">
+    <label>Address</label>
+    <input class="form-control" type="text" formControlName="address" name="address">
+  </div>-->
+  <div formArrayName="address">
+    <div *ngFor="let address of userForm.controls.address.controls;let i= index">
+      <div [formGroupName]="i">
+        Address {{i+1}} 
+        <button *ngIf="i>0" class="btn btn-primary" (click)="removeAddress(i)">Remove Address</button>
+        <div class="form-group">
+          <label>Address</label>
+          <input class="form-control" type="email" formControlName="addressLine1" name="addr1">
+        </div>
+         <div class="form-group">
+          <label>City</label>
+          <input class="form-control" type="email" formControlName="city" name="city">
+        </div>
+         <div class="form-group">
+          <label>Zip</label>
+          <input class="form-control" type="email" formControlName="zip" name="zip">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<button (click)="addNewAddress()" class="btn btn-primary">Add New Address</button>
+{{userForm.value | json}} {{userForm.valid}}
