@@ -1,10 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './routing/routing.module';
 import { EmployeeModule } from './employee/employee.module';
 
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +13,10 @@ import { UserComponent } from './user/user.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from './shared/shared.module';
-import { ProductdetailsComponent } from './product/productdetails.component';
+import { ProductModule } from './product/product.module';
+
+import { LowerCasePipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -23,17 +24,16 @@ import { ProductdetailsComponent } from './product/productdetails.component';
     InvoiceComponent,
     UserComponent,
     PagenotfoundComponent,
-    LoginComponent,
-    ProductdetailsComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
     SharedModule,
+    ProductModule,
     EmployeeModule,
     RoutingModule
   ],
-  providers: [OrderService, ProductService],
+  providers: [OrderService, ProductService,LowerCasePipe ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

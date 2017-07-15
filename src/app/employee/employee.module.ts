@@ -12,7 +12,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule,
     RouterModule.forChild([{
-      path: '', component: Employee
+      path: 'employee', component: Employee
     }])
   ],
   declarations: [Employee, Product, OrderComponent]
