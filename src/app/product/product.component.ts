@@ -18,6 +18,7 @@ export class Product {
     }
 
     ngOnInit() {
+        this.products = this._productService.getProducts();
         this._http.get('http://jsonplaceholder.typicode.com/posts').
             subscribe((res: Response) => this.posts = res.json());
     }

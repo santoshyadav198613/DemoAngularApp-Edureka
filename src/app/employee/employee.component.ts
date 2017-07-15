@@ -5,7 +5,6 @@ import { FormBuilder,  FormGroup, Validators } from  '@angular/forms';
 
 
 @Component({
-    selector: 'emp',
     templateUrl: './employee.html',
     providers: [ ]
 })

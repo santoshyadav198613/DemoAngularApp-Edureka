@@ -1,11 +1,22 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  This is my App Component
+<div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/employee">Employee</a></li>
+      <li><a routerLink="/product">Product</a></li>
+      <li><a routerLink="/order">Order</a></li>
+    </ul>
+  </div>
+</nav>
 </div>
-<emp></emp>
+
+<router-outlet></router-outlet>
+
+<!--<emp></emp>
 <app-invoice></app-invoice>
 <app-user></app-user>
 
@@ -14,5 +25,5 @@
   <div *ngSwitchCase="'Live'">Live Mode On </div>
   <div *ngSwitchCase="'Dev'">Development Mode On </div>
   <div *ngSwitchCase="'Staging'"> Staging Mode On</div>
-  <div *ngSwitchDefault>DisplayMode All </div>
-</div>
+  <div *ngSwitchDefault>DisplayMode All </div>-->
+<!--</div>-->
