@@ -18,9 +18,7 @@ import { ProductModule } from './product/product.module';
 import { LowerCasePipe } from '@angular/common';
 import { MytestdirectiveDirective } from './mytestdirective.directive';
 import { TestpipePipe } from './testpipe.pipe';
-
-
-
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -29,7 +27,8 @@ import { TestpipePipe } from './testpipe.pipe';
     InvoiceComponent,
     UserComponent,
     PagenotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

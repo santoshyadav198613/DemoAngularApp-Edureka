@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { OrderComponent } from '../order/order.component';
 import { LoginComponent } from '../login/login.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
+import { PostComponent } from '../post/post.component'
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
     CommonModule, RouterModule.forRoot([
       { path: 'order', component: OrderComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'post', component: PostComponent },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }
     ])
