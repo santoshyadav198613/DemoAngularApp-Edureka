@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { Product } from '../product/product.component';
 import { ProductdetailsComponent } from '../product/productdetails.component';
 import { ProducteditComponent } from '../product/productedit.component';
+
 @NgModule({
   imports: [
     CommonModule,

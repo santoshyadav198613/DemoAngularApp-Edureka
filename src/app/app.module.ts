@@ -16,6 +16,11 @@ import { SharedModule } from './shared/shared.module';
 import { ProductModule } from './product/product.module';
 
 import { LowerCasePipe } from '@angular/common';
+import { MytestdirectiveDirective } from './mytestdirective.directive';
+import { TestpipePipe } from './testpipe.pipe';
+
+
+
 
 
 @NgModule({

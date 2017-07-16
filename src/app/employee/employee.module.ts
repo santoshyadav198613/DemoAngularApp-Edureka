@@ -5,7 +5,11 @@ import { Employee } from './employee.component';
 import { Product } from '../product/product.component';
 import { OrderComponent } from '../order/order.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { TestpipePipe } from '../testpipe.pipe';
+import { MytestdirectiveDirective } from '../mytestdirective.directive';
+import { ColorHighlightDirective } from '../directive/color-higlight.directive';
+import { InrPipe } from '../pipe/inrpipe.pipe';
+import { WelcomePipe } from '../pipe/welcome.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +19,9 @@ import { SharedModule } from '../shared/shared.module';
       path: 'employee', component: Employee
     }])
   ],
-  declarations: [Employee, Product, OrderComponent]
+  declarations: [Employee, 
+  Product, OrderComponent,TestpipePipe,InrPipe,
+  ColorHighlightDirective,MytestdirectiveDirective,
+  WelcomePipe]
 })
 export class EmployeeModule { }
