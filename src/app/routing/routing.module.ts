@@ -6,7 +6,7 @@ import { OrderComponent } from '../order/order.component';
 import { LoginComponent } from '../login/login.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 import { PostComponent } from '../post/post.component'
-
+import { AuthGuard } from '../service/AuthGuard/auth.guard';
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import { PostComponent } from '../post/post.component'
       { path: 'order', component: OrderComponent },
       { path: 'login', component: LoginComponent },
       { path: 'post', component: PostComponent },
-      { path: 'product', loadChildren: 'app/product/product.module#ProductModule' },
+      { path: 'product', canActivate: [AuthGuard], loadChildren: 'app/product/product.module#ProductModule' },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }
     ])

@@ -19,7 +19,8 @@ import { LowerCasePipe } from '@angular/common';
 import { MytestdirectiveDirective } from './mytestdirective.directive';
 import { TestpipePipe } from './testpipe.pipe';
 import { PostComponent } from './post/post.component';
-
+import { AuthGuard } from './service/AuthGuard/auth.guard';
+import { LoginService } from './service/login/login.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { PostComponent } from './post/post.component';
     EmployeeModule,
     RoutingModule
   ],
-  providers: [OrderService, ProductService, LowerCasePipe],
+  providers: [OrderService, ProductService, LowerCasePipe, AuthGuard, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
