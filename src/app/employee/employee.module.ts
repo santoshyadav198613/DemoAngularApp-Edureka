@@ -8,7 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { TestpipePipe } from '../testpipe.pipe';
 import { MytestdirectiveDirective } from '../mytestdirective.directive';
 import { ColorHighlightDirective } from '../directive/color-higlight.directive';
-import { InrPipe } from '../pipe/inrpipe.pipe';
+
 import { WelcomePipe } from '../pipe/welcome.pipe';
 
 @NgModule({
@@ -19,9 +19,9 @@ import { WelcomePipe } from '../pipe/welcome.pipe';
       path: 'employee', component: Employee
     }])
   ],
-  declarations: [Employee, 
-  Product, OrderComponent,TestpipePipe,InrPipe,
-  ColorHighlightDirective,MytestdirectiveDirective,
-  WelcomePipe]
+  declarations: [Employee,
+     OrderComponent, TestpipePipe, 
+    ColorHighlightDirective, MytestdirectiveDirective,
+    WelcomePipe]
 })
 export class EmployeeModule { }

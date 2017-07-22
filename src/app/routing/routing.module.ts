@@ -14,6 +14,7 @@ import { PostComponent } from '../post/post.component'
       { path: 'order', component: OrderComponent },
       { path: 'login', component: LoginComponent },
       { path: 'post', component: PostComponent },
+      { path: 'product', loadChildren: 'app/product/product.module#ProductModule' },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }
     ])

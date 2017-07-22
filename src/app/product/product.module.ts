@@ -6,20 +6,20 @@ import { RouterModule } from '@angular/router';
 import { Product } from '../product/product.component';
 import { ProductdetailsComponent } from '../product/productdetails.component';
 import { ProducteditComponent } from '../product/productedit.component';
+import { InrPipe } from '../pipe/inrpipe.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild([
-      { path: 'product', component: Product },
-      { path: 'product/:id', component: ProductdetailsComponent },
-      { path: 'product/:id/edit', component: ProducteditComponent },
+      { path: '', component: Product },
+      { path: ':id', component: ProductdetailsComponent },
+      { path: ':id/edit', component: ProducteditComponent },
     ])
-
   ],
-  declarations: [    
-    ProductdetailsComponent,
+  declarations: [Product,
+    ProductdetailsComponent, InrPipe,
     ProducteditComponent]
 })
 export class ProductModule { }

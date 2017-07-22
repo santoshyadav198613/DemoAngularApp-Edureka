@@ -33,11 +33,10 @@ import { PostComponent } from './post/post.component';
   imports: [
     BrowserModule,
     SharedModule,
-    ProductModule,
     EmployeeModule,
     RoutingModule
   ],
-  providers: [OrderService, ProductService,LowerCasePipe ],
+  providers: [OrderService, ProductService, LowerCasePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
