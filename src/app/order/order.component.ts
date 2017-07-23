@@ -1,4 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges, ChangeDetectorRef
+} from '@angular/core';
 import { OrderService } from '../service/order/order.service'
 import { Order } from './order';
 
@@ -6,14 +15,16 @@ import { Order } from './order';
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css'],
-  providers: []
+  providers: [],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OrderComponent implements OnInit {
   orders: Order[];
   order: Order = { id: 0, orderNumber: 0, password: '', userName: '' };
   @Input() empName: string;
   @Output() onOrderPlaced = new EventEmitter<number>();
-  constructor(private _orderService: OrderService) { }
+  constructor(private _orderService: OrderService,
+    private _cd: ChangeDetectorRef) { }
 
 
 
@@ -24,7 +35,7 @@ export class OrderComponent implements OnInit {
 
   ngOnChanges(obj: SimpleChanges) {
     let data = obj;
-     console.log('ngOnInit');
+    console.log('ngOnInit');
   }
 
   addOrder(orderForm: any) {
@@ -32,6 +43,7 @@ export class OrderComponent implements OnInit {
     this._orderService.addOrder(order);
     this.onOrderPlaced.emit(this.order.id);
     this.order = { id: 0, orderNumber: 0, password: '', userName: '' };
+    this._cd.markForCheck();
 
   }
 }
