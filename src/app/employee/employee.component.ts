@@ -1,5 +1,9 @@
-import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { Product } from '../product/product.component';
+
+import {
+    Component, QueryList, ViewChild, ViewChildren, OnChanges, OnDestroy, DoCheck,
+    SimpleChanges, AfterViewInit, AfterViewChecked
+} from '@angular/core';
+import { OrderComponent } from '../order/order.component';
 import { ProductService } from '../service/product/product.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -14,17 +18,18 @@ export class Employee {
     isVisible = false;
     userName = "Test User";
     products = [];
-    @ViewChild(Product)
-    productComponent: Product;
-    @ViewChildren(Product)
-    productChildren: QueryList<Product>;
     employeeForm: FormGroup;
+    orderId: number;
+    @ViewChild(OrderComponent)
+    orderComp: OrderComponent;
 
     constructor(private _service: ProductService, private _fb: FormBuilder) {
 
     }
 
+
     ngOnInit() {
+        console.log('ngOnInit');
         this.products = this._service.getProducts();
         this.employeeForm = this._fb.group({
             name: ['', Validators.required],
@@ -36,15 +41,31 @@ export class Employee {
         })
     }
 
+    ngDoCheck() {
+        let data = this.employeeForm;
+        console.log('ngDoCheck');
+    }
+
+    ngAfterViewInit() {
+        this.orderComp.empName = 'Rupesh';
+        console.log('ngAfterViewInit');
+    }
+
+    ngAfterViewChecked() {
+
+        console.log('ngAfterViewChecked');
+    }
+    addEmployee() {
+        let emp = this.employeeForm.value;
+    }
     submit(name: string) {
         this.changedName = name;
         this.isVisible = !this.isVisible;
     }
 
-    addProduct() {
-        console.log(this.productChildren);
-        this.productChildren.forEach((data) => data.userName = "Srinivasan");
-        //this.productComponent.userName = "Srinivasan";
-        this.productComponent.addProduct();
+
+
+    getOrderId(oId: number) {
+        this.orderId = oId;
     }
 }
