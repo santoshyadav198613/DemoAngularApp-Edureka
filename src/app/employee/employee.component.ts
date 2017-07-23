@@ -1,12 +1,12 @@
 import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Product } from '../product/product.component';
 import { ProductService } from '../service/product/product.service';
-import { FormBuilder,  FormGroup, Validators } from  '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
     templateUrl: './employee.html',
-    providers: [ ]
+    providers: []
 })
 export class Employee {
     firstName: string = "Test";
@@ -18,16 +18,16 @@ export class Employee {
     productComponent: Product;
     @ViewChildren(Product)
     productChildren: QueryList<Product>;
-    employeeForm : FormGroup;
+    employeeForm: FormGroup;
 
     constructor(private _service: ProductService, private _fb: FormBuilder) {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.products = this._service.getProducts();
-        this.employeeForm =this._fb.group({
-            name : ['', Validators.required ],
+        this.employeeForm = this._fb.group({
+            name: ['', Validators.required],
             address: this._fb.group({
                 addressLine1: [''],
                 city: [''],
